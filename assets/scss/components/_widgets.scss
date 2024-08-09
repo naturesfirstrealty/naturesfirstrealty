@@ -1,0 +1,123 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.blog-sidebar__wrapper {
+  .blog-sidebar__widget {
+    margin-top: 50px;
+  }
+  .blog-sidebar__widget-head {
+    padding: 15px 30px;
+    border-radius: 5px 5px 0px 0px;
+    background: $color-green;
+    .blog-sidebar__widget-title {
+      font-size: 20px;
+      list-style: 30px;
+      font-weight: 700;
+      color: $color-white;
+    }
+  }
+  .blog-sidebar__widget-content {
+    padding: 30px;
+    border-radius: 0px 0px 5px 5px;
+    background: $color-white2;
+  }
+  .search-widget {
+    form {
+      @include d-flex;
+      @include align-items;
+    }
+    input {
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px 0px 0px 5px;
+    }
+    button {
+      padding: 0;
+      width: 50px;
+      height: 50px;
+      font-size: 15px;
+      color: $color-gBlack;
+      border-radius: 0px 5px 5px 0px;
+      background: $color-white;
+    }
+  }
+  .post-list {
+    li,
+    li .date {
+      @include d-flex;
+      @include align-items;
+    }
+    li {
+      gap: 20px;
+      & ~ li {
+        margin-top: 15px;
+      }
+    }
+    .date {
+      gap: 10px;
+    }
+    .post-img {
+      width: 80px;
+      height: 85px;
+      img {
+        width: 100%;
+        height: 100%;
+        @include object-fit;
+        @include object-position;
+      }
+    }
+    .post-text {
+      width: calc(100% - 75px);
+      .my-icon {
+        color: $color-green;
+      }
+      h6 {
+        font-weight: 700;
+        margin-top: 2px;
+      }
+    }
+  }
+  .category-list {
+    ul {
+      padding: 25px 20px;
+      border-radius: 5px;
+      background: $color-white;
+    }
+    li {
+      @include d-flex;
+      @include align-items;
+      @include flex-wrap;
+      gap: 15px;
+      & ~ li {
+        margin-top: 20px;
+      }
+    }
+    h6 {
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 700;
+    }
+    .my-icon {
+      color: $color-green;
+      font-size: 14px;
+    }
+  }
+  .tags-widgets {
+    ul {
+      @include d-flex;
+      @include flex-wrap;
+      gap: 12px;
+    }
+    a {
+      display: block;
+      padding: 5px 20px;
+      color: $color-gBlack;
+      border-radius: 5px;
+      background: $color-white;
+      &:hover {
+        color: $color-white;
+        background: $color-green;
+      }
+    }
+  }
+}

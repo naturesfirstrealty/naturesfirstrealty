@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.section-title,
+.section-title-center,
+.section-title-white,
+.section-title-center-white {
+  h6 {
+    color: $color-green;
+    letter-spacing: 0.4px;
+    font-size: 24px;
+    line-height: 34px;
+    font-family: "Covered By Your Grace", cursive;
+    text-transform: capitalize;
+    font-weight: 500;
+    & ~ h2 {
+      margin-top: 10px;
+    }
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: capitalize;
+    & ~ p {
+      margin-top: 20px;
+    }
+  }
+  & ~ .row,
+  & ~ .slider {
+    margin-top: 50px;
+  }
+}
+
+.section-title-center,
+.section-title-center-white {
+  text-align: center;
+  h6,
+  h2,
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.title-left-right {
+  @include d-flex;
+  @include align-items-end;
+  @include justify-content-between;
+  @include flex-wrap;
+  gap: 30px;
+}
+
+.section-title-white h2,
+.section-title-center-white h2 {
+  color: $color-white;
+}

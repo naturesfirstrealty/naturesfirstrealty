@@ -1,0 +1,510 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+/*=====================
+    2 Top Bar 
+=======================*/
+
+.top-bar {
+  &.v1 {
+    background: $color-white;
+    .top-info ul {
+      @include d-flex;
+      @include align-items;
+      @include flex-wrap;
+    }
+    .top-info {
+      padding-top: 15px;
+      gap: 20px;
+      @include justify-content-between;
+      ul {
+        gap: 20px;
+        text-align: right;
+      }
+      li {
+        & ~ li {
+          border-left: 1px solid $color-border;
+          padding-left: 20px;
+        }
+        a:hover {
+          color: $color-green;
+        }
+      }
+      p,
+      li a {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+        color: $color-gBlack;
+      }
+    }
+    .top-bar-logo {
+      a {
+        display: inline-block;
+        max-width: 150px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .top-bar-btn {
+      text-align: right;
+    }
+    .top-display-info {
+      padding: 15px 0px;
+      ul {
+        @include d-flex;
+        @include align-items;
+        @include flex-wrap;
+        @include justify-content-between;
+      }
+      ul,
+      li {
+        gap: 14px;
+      }
+      li {
+        display: none;
+        &:nth-child(1) {
+          @include d-flex;
+          @include align-items;
+        }
+      }
+      .info-icon .my-icon {
+        font-size: 20px;
+        color: $color-green;
+      }
+      .info-text {
+        p {
+          font-size: 13px;
+          font-weight: 500;
+          & ~ h6 {
+            margin-top: -5px;
+          }
+        }
+        h6 {
+          font-size: 13px;
+          font-weight: 700;
+        }
+      }
+      .search-open-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        color: $color-green;
+        border-radius: 50px;
+        background: $color-white2;
+      }
+      .top-bar-search {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+        &::before {
+          position: fixed;
+          content: "";
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          opacity: 0.95;
+          background: $color-black;
+        }
+        .search-close {
+          position: absolute;
+          padding: 0;
+          top: 80px;
+          right: 40px;
+          font-size: 24px;
+          color: $color-white;
+          background: $color-tr;
+          &:hover {
+            color: $color-green;
+          }
+        }
+        form {
+          @include d-flex;
+          @include align-items;
+          position: absolute;
+          width: calc(100% - 40px);
+          height: 60px;
+          top: 50%;
+          left: 50%;
+          border-bottom: 1px solid $color-border;
+          background: $color-tr;
+          @include transform(translate(-50%, -150%) scale(0.8));
+          @include transition;
+          input {
+            width: calc(100% - 40px);
+            height: 100%;
+            font-size: 18px;
+            color: $color-white;
+            background: $color-tr;
+          }
+          button {
+            width: 70px;
+            height: 100%;
+            padding: 0;
+            color: $color-white;
+            font-size: 18px;
+            background: $color-tr;
+            &:hover {
+              color: $color-green;
+            }
+          }
+        }
+      }
+      &.active .top-bar-search {
+        opacity: 1;
+        visibility: visible;
+        form {
+          @include transform(translate(-50%, -50%) scale(1));
+        }
+      }
+    }
+  }
+}
+
+/*=====================
+    3 Menu Bar 
+=======================*/
+
+.menu-bar {
+  &.v1 {
+    background: $color-white2;
+    .menu-bar-content {
+      display: none;
+      .main-menu {
+        & > ul {
+          @include d-flex;
+          @include align-items;
+          @include flex-wrap;
+          gap: 20px;
+        }
+        li {
+          position: relative;
+          a {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 20px 0px;
+            text-transform: capitalize;
+            color: $color-white;
+          }
+          &.active > a,
+          &:hover > a,
+          &.current_page_parent > a,
+          &.current-menu-parent > a,
+          &.current_page_item > a {
+            opacity: 0.7;
+          }
+          &.has-dropdown > a::after {
+            font-family: "icomoon";
+            content: "\e900";
+            speak: never;
+            font-size: calc(100% - 5px);
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            margin-left: 5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          ul {
+            padding-top: 0;
+            position: absolute;
+            min-width: 220px;
+            gap: 0;
+            top: 120%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 4;
+            background: $color-white;
+            @include transition;
+            @include flex-direction-column;
+            @include box-shadow(0 0 30px rgba(0, 0, 0, 0.09));
+            ul {
+              left: 100%;
+            }
+            li:hover > ul {
+              top: 0;
+            }
+          }
+          &:hover > ul {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+          }
+          li {
+            & ~ li {
+              border-top: 1px dashed $color-green;
+            }
+            a {
+              display: block;
+              padding: 15px 35px;
+              font-weight: 600;
+              color: $color-black;
+            }
+            &:hover > a,
+            &.active a {
+              color: $color-green;
+            }
+            &:hover > a {
+              padding-left: 45px;
+            }
+          }
+        }
+      }
+      .social-link {
+        ul {
+          @include d-flex;
+          @include align-items;
+          gap: 25px;
+        }
+        a {
+          display: inline-block;
+          color: $color-white;
+          font-size: 15px;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    .mobile-header {
+      padding: 25px 0px;
+      @include d-flex;
+      @include align-items;
+      @include justify-content-between;
+      gap: 20px;
+      .mobile-menu-logo {
+        a {
+          display: inline-block;
+          max-width: 140px;
+          img {
+            max-width: 100%;
+          }
+        }
+        img {
+          max-width: 140px;
+        }
+      }
+      .mobile-menu-right {
+        @include d-flex;
+        @include align-items;
+        gap: 20px;
+      }
+      .search-open-btn {
+        padding: 0;
+        font-size: 20px;
+        color: $color-green;
+        background: $color-tr;
+      }
+      .mobile-menu-btn {
+        position: relative;
+        width: 35px;
+        height: 25px;
+        background: $color-tr;
+        span {
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          left: 0;
+          border-radius: 10px;
+          background: $color-green;
+          @include transition;
+          &:nth-child(1) {
+            top: 0;
+          }
+          &:nth-child(3) {
+            bottom: 0;
+          }
+        }
+        &.active {
+          span {
+            &:nth-child(1) {
+              width: 15px;
+              top: 23px;
+              @include transform(translate(-1.5px, -5.3px) rotate(-135deg));
+            }
+            &:nth-child(2) {
+              width: 75%;
+              @include transform(rotate(-180deg));
+            }
+            &:nth-child(3) {
+              width: 15px;
+              bottom: 23px;
+              @include transform(translate(-1.5px, 7.3px) rotate(135deg));
+            }
+          }
+        }
+      }
+      .mobile-menu-bar {
+        position: fixed;
+        width: 320px;
+        max-width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        opacity: 0;
+        visibility: hidden;
+        background: $color-white;
+        box-shadow: 0 0 30px rgb(0 0 0 / 9%);
+        @include transition;
+        z-index: 5;
+        &.active {
+          left: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .mobile-menu-header {
+        @include d-flex;
+        @include align-items;
+        gap: 30px;
+        @include justify-content-between;
+        border-bottom: 1px dashed $color-green;
+        .mobile-logo {
+          padding-left: 15px;
+          a {
+            display: inline-block;
+            max-width: 140px;
+            img {
+              max-width: 100%;
+            }
+          }
+          img {
+            max-width: 140px;
+          }
+        }
+        .close-mobile-btn {
+          padding: 25px;
+          font-size: 20px;
+          border-left: 1px dashed $color-green;
+          background: $color-tr;
+        }
+      }
+      .mobile-main-manu {
+        margin-top: 25px;
+        overflow-y: auto;
+        height: calc(100% - 100px);
+      }
+      .main-menu {
+        li {
+          border-top: 1px dashed $color-green;
+          &.active {
+            & > a {
+              color: $color-green;
+            }
+            a > .my-icon {
+              @include transform(rotate(0deg));
+            }
+          }
+        }
+        & > ul > li:first-child {
+          border-top: none;
+        }
+        ul {
+          ul {
+            display: none;
+            a {
+              font-size: calc(100% - 0.4px);
+              padding-left: calc(7% + 5px);
+            }
+          }
+        }
+        a {
+          position: relative;
+          display: block;
+          padding: 15px 40px 15px 20px;
+          font-size: 15px;
+          line-height: 25px;
+          font-weight: 700;
+        }
+        li.has-dropdown {
+          & > a::after {
+            position: absolute;
+            font-family: "icomoon";
+            content: "\e900";
+            speak: never;
+            font-size: calc(100% - 5px);
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            margin-left: 5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            top: 21px;
+            right: 24px;
+            font-size: 12px;
+            @include transition;
+            @include transform(rotate(90deg));
+          }
+          &.active > a::after {
+            @include transform(rotate(0deg));
+          }
+        }
+      }
+      .social-link {
+        padding: 0 20px;
+        margin-top: 30px;
+        ul {
+          @include d-flex;
+          @include align-items;
+          @include justify-content-between;
+          @include flex-wrap;
+          gap: 15px;
+        }
+        a {
+          display: block;
+          width: 45px;
+          height: 45px;
+          line-height: 45px;
+          border-radius: 50px;
+          text-align: center;
+          font-size: 15px;
+          color: $color-green;
+          border: 1px solid $color-green;
+          background: $color-white;
+          &:hover {
+            color: $color-white;
+            background: $color-green;
+          }
+        }
+      }
+      .mobile-menu-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        background: $color-black;
+        @include transition;
+        z-index: 2;
+        &.active {
+          opacity: 0.3;
+          visibility: visible;
+        }
+      }
+    }
+    &.sticky-header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 7;
+      @include box-shadow(0px 4px 24px -6px rgba(19, 16, 34, 0.3));
+    }
+  }
+}

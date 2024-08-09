@@ -1,0 +1,86 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.breadcum {
+  &.v1 {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      background: $color-black;
+      z-index: -1;
+    }
+    .breadcum-content {
+      padding: 50px 0px;
+      text-align: center;
+      h2 {
+        color: $color-white;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 48px;
+        & ~ ul {
+          margin-top: 30px;
+        }
+      }
+      ul {
+        @include d-flex;
+        @include align-items;
+        @include justify-content-center;
+        gap: 5px;
+        color: $color-white;
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: 700;
+      }
+      li {
+        color: $color-green;
+        & ~ li {
+          @include d-flex;
+          @include align-items;
+          gap: 5px;
+          &::before {
+            content: "/";
+            color: $color-white;
+          }
+        }
+      }
+      a {
+        display: block;
+        color: $color-white;
+        &:hover {
+          color: $color-green;
+        }
+      }
+    }
+    .line-shap,
+    .right-bottom-shap {
+      position: absolute;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+    }
+    .line-shap {
+      top: -40%;
+      left: -14%;
+      width: 50%;
+      min-height: 100%;
+      opacity: 1;
+    }
+    .right-bottom-shap {
+      width: 30%;
+      min-height: 100%;
+      bottom: -40%;
+      right: -10%;
+      opacity: 0.2;
+    }
+  }
+}

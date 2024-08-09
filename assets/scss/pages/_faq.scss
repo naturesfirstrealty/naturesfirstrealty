@@ -1,0 +1,94 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+/*=======================
+    19 FAQ Info
+=========================*/
+
+.faq-info {
+  &.v1 {
+    .section-title ~ .accordion,
+    .section-title-center ~ .accordion {
+      margin-top: 50px;
+    }
+    .accordion {
+      @include d-flex;
+      @include align-items-start;
+      @include flex-wrap;
+      gap: 30px;
+      li {
+        width: 100%;
+      }
+      .faq-btn {
+        position: relative;
+        width: 100%;
+        padding: 25px 30px 25px 50px;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: inherit;
+        border: 1px solid $color-border;
+        border-radius: 5px;
+        background: $color-white;
+        &::before {
+          position: absolute;
+          content: "@";
+          top: 22px;
+          left: 20px;
+          font-size: 20px;
+          color: $color-green;
+        }
+      }
+      .faq-content-body {
+        padding: 30px 18px;
+      }
+    }
+  }
+}
+
+/*=====================
+    20 Map Info
+=======================*/
+
+.map-info {
+  &.v1 {
+    position: relative;
+    z-index: 1;
+    .contact-map iframe {
+      width: 100%;
+      min-height: 600px;
+      border-radius: 10px;
+    }
+    .contact-info,
+    li {
+      @include d-flex;
+      @include align-items;
+      @include flex-wrap;
+    }
+    .contact-info {
+      margin-top: 50px;
+      gap: 30px;
+      @include justify-content-center;
+      li {
+        width: 100%;
+        padding: 35px 45px;
+        border: 1px solid $color-border;
+        border-radius: 5px;
+        background: $color-white;
+        gap: 20px;
+        .my-icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+          color: $color-white;
+          font-size: 30px;
+          line-height: 50px;
+          text-align: center;
+          background: $color-green;
+        }
+        .text h4 {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

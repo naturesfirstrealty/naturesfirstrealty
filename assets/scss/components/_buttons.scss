@@ -1,0 +1,108 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.link-anime,
+.btn-anime {
+  position: relative;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-align: center;
+  border-radius: 10px;
+  color: $color-black;
+  text-transform: capitalize;
+  overflow: hidden;
+  background: $color-tr;
+  &.v1,
+  &.v2 {
+    z-index: 1;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 50%;
+      height: 150%;
+      z-index: -1;
+      border-radius: 800px;
+      @include transition;
+      @include transform(scale(1.8));
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+  }
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 0.5;
+      @include transform(scale(0.5));
+    }
+    &::before {
+      top: -116%;
+      left: -38%;
+    }
+    &::after {
+      bottom: -116%;
+      right: -38%;
+    }
+  }
+  &.v1 {
+    color: $color-white;
+    border: 1.8px solid $color-green;
+    &::before,
+    &::after {
+      background: $color-green;
+    }
+    &:hover {
+      color: $color-green;
+    }
+  }
+  &.v2 {
+    color: $color-black;
+    border: 1.8px solid $color-yellow;
+    &::before,
+    &::after {
+      background: $color-yellow;
+    }
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+}
+
+.link-anime {
+  padding: 15px 30px;
+  display: inline-block;
+  &::before,
+  &::after {
+    display: block;
+  }
+}
+.btn-anime {
+  padding: 18.2px 30px;
+  background: $color-tr;
+}
+
+.read-more-link {
+  display: inline-block;
+  text-transform: capitalize;
+  font-weight: 800;
+  background: $color-tr;
+  .icon-plus {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    text-align: center;
+    line-height: 16px;
+    color: $color-white;
+    border-radius: 100px;
+    background: $color-green;
+    margin-right: 10px;
+  }
+}

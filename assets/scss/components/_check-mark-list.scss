@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.check-mark-list {
+  &.v1,
+  &.v2,
+  &.v3 {
+    li {
+      @include d-flex;
+      gap: 12px;
+      & ~ li {
+        margin-top: 20px;
+      }
+      .my-icon {
+        line-height: 20px;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    }
+  }
+  &.v1,
+  &.v2 {
+    li {
+      .my-icon {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        text-align: center;
+        border-radius: 50px;
+        color: $color-white;
+      }
+      h6 {
+        color: $color-gBlack;
+      }
+    }
+  }
+  &.v1 {
+    .my-icon {
+      background: $color-yellow;
+    }
+    h6 {
+      font-weight: 700;
+    }
+  }
+  &.v2 {
+    .my-icon {
+      background: $color-green;
+    }
+  }
+  &.v3 li {
+    .my-icon {
+      color: $color-green;
+      font-size: 24px;
+    }
+    h6 {
+      font-weight: 700;
+    }
+  }
+}

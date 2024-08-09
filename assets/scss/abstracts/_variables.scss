@@ -1,0 +1,28 @@
+/* =================
+    Root Color 
+=================*/
+
+:root {
+  --color-white: #ffffff;
+  --color-white2: #f8f7f0;
+  --color-white3: #f7f7f7;
+  --color-black: #24231d;
+  --color-black2: #333f4d;
+  --color-gBlack: #878680;
+  --color-border: #e3e3e3;
+  --color-green: #4baf47;
+  --color-yellow: #eec044;
+  --color-tr: transparent;
+}
+
+//Color
+$color-white: var(--color-white);
+$color-white2: var(--color-white2);
+$color-white3: var(--color-white3);
+$color-black: var(--color-black);
+$color-black2: var(--color-black2);
+$color-gBlack: var(--color-gBlack);
+$color-border: var(--color-border);
+$color-green: var(--color-green);
+$color-yellow: var(--color-yellow);
+$color-tr: var(--color-tr);

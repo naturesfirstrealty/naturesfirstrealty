@@ -1,0 +1,25 @@
+/log/*
+/tmp
+.DS_Store
+
+#Project Files
+*.esproj
+*.sublime-project
+*.sublime-workspace
+
+#Ignore vim swap files
+*.swp
+
+coverage/
+.vscode
+
+# Ignore for github oauth key
+.github-access-token
+
+.idea/
+
+# Node Modules
+node_modules/
+
+# Ignore bundler config
+/.bundle

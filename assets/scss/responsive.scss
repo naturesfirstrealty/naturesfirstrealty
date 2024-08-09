@@ -1,0 +1,1012 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Farmus - Agriculture and Organic Farm HTML5 Template
+Theme URI: https://themeforest.net/user/techsometimes/portfolio
+Design by: techsometimes
+Developed by: A N Abdullah Al Numan
+Version: 1.0
+License: 
+Tags: 
+*/
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+    1 Theme Default
+
+    2 Top Bar 
+
+    3 Menu Bar 
+
+    4 Banner
+
+    5 About Us
+
+    6 Services
+
+    7 Projects Gallery
+
+    8 FAQ
+
+    9 Work Process
+
+    10 Counting Items
+
+    11 Our Team
+
+    14 Massage Form
+
+    15 Our Blogs
+
+    16 Service Details
+
+    17 Projects Details
+
+    19 FAQ Info
+
+    20 Map Info
+
+    21 Blog Post
+
+    22 Blog Details
+
+    23 Info Footer
+    
+======================================
+[ End table content ]
+======================================*/
+
+/*=====================
+    1 Theme Default
+=======================*/
+
+@use "./abstracts/variables" as *;
+@use "./abstracts/autoprefixer" as *;
+
+@media (min-width: 370px) and (max-width: 576px) {
+  /*=====================
+    2 Top Bar 
+=======================*/
+  .top-bar {
+    &.v1 {
+      .top-display-info {
+        li:nth-child(2) {
+          @include d-flex;
+          @include align-items;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  /*=====================
+    2 Top Bar 
+=======================*/
+  .top-bar {
+    &.v1 {
+      .top-display-info {
+        li:nth-child(2) {
+          @include d-flex;
+          @include align-items;
+        }
+      }
+    }
+  }
+  /*=====================
+    23 Info Footer
+=======================*/
+  .info-footer {
+    &.v2 {
+      .row > div:nth-child(1) .footer__widget,
+      .row > div:nth-child(2) .footer__widget {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  /*=====================
+    1 Theme Default
+=======================*/
+  section {
+    padding: 80px 0px;
+  }
+  /*=====================
+    2 Top Bar 
+=======================*/
+  .top-bar {
+    &.v1 {
+      .top-display-info {
+        li:nth-child(3) {
+          @include d-flex;
+          @include align-items;
+        }
+      }
+    }
+  }
+  /*=====================
+    4 Banner
+=======================*/
+
+  .banner {
+    &.v1 {
+      .banner-content {
+        padding: 80px 0px;
+      }
+    }
+  }
+
+  /*=====================
+      5 About Us
+  =======================*/
+  .about-us {
+    &.v1 {
+      .about-us-img {
+        width: 90%;
+        img {
+          width: 100%;
+          margin-top: -150px;
+        }
+        .count-shap {
+          width: 65%;
+        }
+        .about-profile {
+          .img-shap-left {
+            width: 120px;
+            height: 90px;
+            left: calc(5% + 8px);
+            bottom: 10%;
+          }
+          .img-shap-right {
+            width: 84px;
+            height: 100px;
+            top: -140px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /*=====================
+      6 Services
+  =======================*/
+  .services {
+    &.v1 .row > div:nth-last-child(2) .provide-card,
+    &.v2 .row > div:nth-last-child(2) .provide-card {
+      margin-bottom: 0px;
+    }
+  }
+  /*========================
+      7 Projects Gallery
+  ==========================*/
+  .projects-gallery {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(2) .gallery-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*=======================
+      9 Work Process
+  =========================*/
+  .work-process {
+    &.v1 .row > div:nth-last-child(2) .work-card {
+      margin-bottom: 0px;
+    }
+  }
+  /*=======================
+      10 Counting Items
+  =========================*/
+
+  .counting-items {
+    &.v1,
+    &.v2 {
+      padding-bottom: 80px;
+    }
+  }
+
+  /*========================
+      11 Our Team
+  ==========================*/
+
+  .our-team {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(2) .team-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*========================
+      15 Our Blogs
+  ==========================*/
+
+  .our-blogs {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(2) .blog-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*=====================
+    23 Info Footer
+=======================*/
+  .info-footer {
+    &.v2 {
+      .logo-subscriber {
+        .sent-email {
+          @include d-flex;
+          @include align-items;
+          height: 60px;
+          width: calc(100% - 290px);
+          input {
+            width: calc(100% - 200px);
+            height: 100%;
+            & ~ button {
+              margin-top: 0;
+            }
+          }
+          button {
+            width: 200px;
+            height: 100%;
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  /*=====================
+    1 Theme Default
+=======================*/
+
+  .section-title-center,
+  .section-title-center-white {
+    h6 {
+      max-width: 25%;
+    }
+    h2 {
+      max-width: 42%;
+    }
+    p {
+      max-width: 75%;
+    }
+  }
+  section {
+    &.pt-lg-spach {
+      padding-top: 200px;
+    }
+    &.pb-lg-spach {
+      padding-bottom: 200px;
+    }
+    &.mt-lg-spach {
+      margin-top: -100px;
+    }
+    &.mb-lg-spach {
+      margin-bottom: -100px;
+    }
+  }
+
+  .title-left-right {
+    .left-content {
+      width: 45%;
+    }
+  }
+  .breadcum {
+    &.v1 {
+      .breadcum-content {
+        padding: 150px 0px;
+        @include d-flex;
+        @include align-items;
+        @include justify-content-between;
+        text-align: inherit;
+        h2 ~ ul {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .play-btn {
+    &.v2 {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .message-form {
+    &.v1,
+    &.v2 {
+      input,
+      .my-select {
+        width: calc(50% - 15px);
+      }
+    }
+    &.v3 {
+      input,
+      .my-select {
+        width: calc(33.3333333% - 20px);
+      }
+    }
+  }
+  .blog-sidebar__wrapper {
+    .blog-sidebar__widget:first-child {
+      margin-top: 0px;
+    }
+    .blog-sidebar__widget-head {
+      padding: 20px 30px;
+      border-radius: 5px 20px 0px 0px;
+      .blog-sidebar__widget-title {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+    .category-list {
+      li {
+        gap: 10px;
+      }
+      h6 {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  /*=====================
+      4 Banner
+  =======================*/
+  .banner {
+    &.v1,
+    &.v2 {
+      .banner-content {
+        padding: 100px 50px 100px 0px;
+        h2 {
+          font-size: 65px;
+          line-height: 85px;
+        }
+        h6 ~ h2,
+        h2 ~ p {
+          margin-top: 8px;
+        }
+        p ~ ul {
+          margin-top: 35px;
+        }
+        ul {
+          gap: 40px;
+        }
+      }
+    }
+    &.v1 {
+      &::before {
+        opacity: 1;
+        background: linear-gradient(90deg, #24231d 0%, rgba(0, 0, 0, 0) 100%);
+      }
+      .line-shap,
+      .lip-shap,
+      .right-bottom-shap,
+      .circle-shap,
+      .circle-dot-shap {
+        display: block;
+      }
+      .banner-content {
+        padding: 100px 0px;
+      }
+    }
+  }
+
+  /*=====================
+      5 About Us
+  =======================*/
+  .about-us {
+    &.v2 {
+      position: relative;
+      padding: 0;
+      background: $color-tr;
+      .about-us-box {
+        padding: 60px 45px;
+        border-radius: 5px;
+        background: $color-white2;
+        @include d-flex;
+        gap: 45px;
+      }
+      .about-us-img {
+        width: 50%;
+        .count-shap {
+          width: 26%;
+        }
+        & ~ .about-us-content {
+          margin-top: 0px;
+        }
+      }
+      .about-us-content {
+        width: 50%;
+        .box-img-list {
+          @include d-flex;
+          @include align-items;
+          @include justify-content-between;
+          gap: 30px;
+          .left-img {
+            width: 50%;
+            & ~ .check-mark-list {
+              margin-top: 0px;
+            }
+          }
+          ul {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  /*=====================
+      6 Services
+  =======================*/
+  .services {
+    &.v1 .row > div:nth-last-child(3) .provide-card,
+    &.v2 .row > div:nth-last-child(3) .provide-card {
+      margin-bottom: 0px;
+    }
+  }
+
+  /*========================
+      7 Projects Gallery
+  ==========================*/
+  .projects-gallery {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(3) .gallery-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*========================
+      8 FAQ
+  ==========================*/
+  .faq {
+    &.v1 {
+      position: relative;
+      padding: 90px 0px 0px 0px;
+      z-index: 1;
+      .faq-img {
+        @include d-flex;
+        @include align-items-end;
+        @include justify-content-end;
+        position: absolute;
+        top: 0;
+        left: -5vw;
+        width: 63vw;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: -4vw 0px;
+        background-size: cover;
+        border-radius: 0px;
+        z-index: -1;
+        margin-bottom: 0px;
+        .small-box {
+          position: relative;
+          padding: 20px;
+          width: 35%;
+          right: calc(8vw + 23px);
+          bottom: 30px;
+          &::before {
+            opacity: 0.8;
+            border-radius: 5px;
+          }
+        }
+      }
+      .faq-content {
+        padding: 60px 40px;
+      }
+    }
+    &.v2 {
+      .faq-img {
+        margin: 0px 0px -140px 0px;
+      }
+    }
+  }
+
+  /*=======================
+      9 Work Process
+  =========================*/
+  .work-process {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(3) .work-card,
+      .row > div:nth-last-child(4) .work-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*=======================
+      10 Counting Items
+  =========================*/
+
+  .counting-items {
+    &.v1 {
+      .counting-item-list li {
+        width: calc(33.3333333% - 20px);
+      }
+    }
+    &.v2 {
+      .counting-item-list {
+        padding: 50px 100px;
+        li {
+          width: calc(25% - 30px);
+        }
+      }
+    }
+  }
+
+  /*========================
+      11 Our Team
+  ==========================*/
+
+  .our-team {
+    &.v1 .row > div:nth-last-child(3) .team-card,
+    &.v2 .row > div:nth-last-child(3) .team-card,
+    &.v1 .row > div:nth-last-child(4) .team-card {
+      margin-bottom: 0px;
+    }
+  }
+
+  /*========================
+      15 Our Blogs
+  ==========================*/
+
+  .our-blogs {
+    &.v1,
+    &.v2 {
+      .row > div:nth-last-child(3) .blog-card {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  /*=======================
+      16 Service Details
+  =========================*/
+
+  .service-details {
+    &.v1 {
+      .service-links-list {
+        h5 {
+          padding: 20px 40px;
+        }
+        ul {
+          padding: 4px 20px;
+          border-radius: 0px 0px 5px 5px;
+        }
+        li a {
+          font-size: 18px;
+        }
+      }
+      .service-content {
+        margin-top: 0;
+      }
+      .serv-box-img-text {
+        .box-img,
+        .box-text {
+          width: calc(50% - 15px);
+        }
+      }
+      .our-features {
+        ul {
+          gap: 40px 30px;
+          li {
+            width: calc(50% - 30px);
+          }
+        }
+      }
+    }
+  }
+
+  /*=======================
+      17 Projects Details
+  =========================*/
+  .projects-details {
+    &.v1 {
+      .projects-social {
+        @include justify-content-end;
+      }
+      .main-content {
+        .projects-info .info-list {
+          margin: -65px 60px 0px 60px;
+          li {
+            padding-left: 40px;
+            width: 25%;
+            & ~ li {
+              border-left: 1px solid $color-border;
+            }
+          }
+        }
+        .prev-next-btns {
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+
+  /*=======================
+      18 Contact Us
+  =========================*/
+
+  .contact-us {
+    &.v1 {
+      .contact-info {
+        margin-top: 0;
+        .contact-list {
+          li {
+            width: calc(50% - 15px);
+          }
+          .my-icon {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  /*=======================
+      19 FAQ Info
+  =========================*/
+  .faq-info {
+    &.v1 .accordion {
+      li {
+        width: calc(50% - 15px);
+      }
+    }
+  }
+
+  /*=====================
+      20 Map Info
+  =======================*/
+  .map-info {
+    &.v1 {
+      .contact-info {
+        margin-top: -70px;
+        li {
+          width: calc(30% - 30px);
+        }
+      }
+    }
+  }
+
+  /*=====================
+      21 Blog Post
+  =======================*/
+  .blog-post {
+    &.v1 {
+      .blog-post-card {
+        .post-body {
+          padding: 50px 30px 0px 30px;
+          .day-box {
+            position: absolute;
+            right: 30px;
+            top: calc(-20% - 18px);
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 30px;
+            color: $color-white;
+            border-radius: 5px;
+            background: $color-green;
+            z-index: 1;
+            & ~ .post-title {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*=====================
+      22 Blog Details
+  =======================*/
+  .blog-details {
+    &.v1 {
+      .main-text {
+        h2 {
+          font-size: 48px;
+          line-height: 60px;
+        }
+        .article-text {
+          padding: 110px 30px 35px 30px;
+          &::before {
+            top: 35px;
+            left: 30px;
+            font-size: 65px;
+          }
+        }
+      }
+      .next-preve-post {
+        @include justify-content-between;
+        a {
+          width: calc(50% - 20px);
+          &.next-post {
+            @include justify-content-end;
+            border-left: 1px solid $color-green;
+          }
+        }
+      }
+    }
+  }
+
+  /*=====================
+    23 Info Footer
+=======================*/
+  .info-footer {
+    &.v1 .footer__widget {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  /*=====================
+    1 Theme Default
+=======================*/
+  section {
+    padding: 100px 0px;
+    &.pt-xl-spach {
+      padding-top: 200px;
+    }
+    &.pb-xl-spach {
+      padding-bottom: 200px;
+    }
+    &.mt-xl-spach {
+      margin-top: -100px;
+    }
+    &.mb-xl-spach {
+      margin-bottom: -100px;
+    }
+  }
+  /*=====================
+    2 Top Bar 
+=======================*/
+  .top-bar {
+    &.v1 {
+      position: relative;
+      padding-bottom: 20px;
+      background: $color-white2;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 20px;
+        bottom: 0;
+        left: 0;
+        background: $color-green;
+      }
+      .top-info {
+        padding: 20px 25px;
+      }
+      .top-display-info {
+        position: relative;
+        gap: 20px;
+        @include justify-content-between;
+        padding: 30px 25px;
+        border-radius: 5px;
+        background: $color-white;
+        margin-bottom: -20px;
+        li ~ li {
+          border-left: 1px solid $color-border;
+          padding-left: 20px;
+        }
+        .info-icon .my-icon {
+          font-size: 30px;
+        }
+        .info-text {
+          p {
+            display: block;
+            & ~ h6 {
+              margin-top: 0;
+            }
+          }
+          h6 {
+            font-size: 16px;
+          }
+        }
+        .top-bar-search {
+          .search-close {
+            top: 120px;
+            right: 80px;
+          }
+          form {
+            width: 50%;
+            height: 70px;
+            input {
+              font-size: 24px;
+            }
+            button {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*=====================
+      3 Menu Bar 
+  =======================*/
+  .menu-bar {
+    &.v1 {
+      background: $color-green;
+      .menu-bar-content {
+        @include d-flex;
+        @include align-items;
+        @include justify-content-between;
+        @include flex-wrap;
+        gap: 20;
+      }
+      .mobile-header {
+        display: none;
+      }
+      &.sticky-header {
+      }
+    }
+  }
+
+  /*=====================
+      4 Banner
+  =======================*/
+  .banner {
+    &.v2 {
+      .profile-img {
+        .main-img {
+          text-align: right;
+          &::before {
+            width: calc(100% - 90px);
+            height: calc(100% - 50px);
+            left: 40px;
+            border-radius: 40% 0 0 40%;
+          }
+          img {
+            width: calc(100% - 130px);
+          }
+        }
+        .plan-p {
+          margin-top: 0;
+          li {
+            position: absolute;
+            z-index: 2;
+            width: 115px;
+            height: 115px;
+            &:nth-child(1) {
+              top: calc(10% + 22px);
+              left: 30px;
+            }
+            &:nth-child(2) {
+              top: calc(50% + 35px);
+              @include transform(translateY(-50%));
+              left: 0px;
+            }
+            &:nth-child(3) {
+              bottom: 0;
+              left: 30px;
+              & ~ li {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*=======================
+      10 Counting Items
+  =========================*/
+
+  .counting-items {
+    &.v1,
+    &.v2 {
+      padding-bottom: 0;
+    }
+  }
+
+  /*========================
+      14 Massage Form
+  ==========================*/
+  .massage-form {
+    &.v1 {
+      position: relative;
+      padding: 0;
+      z-index: 1;
+      overflow: hidden;
+      &::before,
+      .right-bottom-shap {
+        position: absolute;
+        content: "";
+        width: calc(50vw + 30px);
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+      }
+      &::before {
+        background: $color-white2;
+      }
+      .main-form-massage {
+        margin-top: 0;
+      }
+    }
+  }
+
+  /*=====================
+    23 Info Footer
+=======================*/
+  .info-footer {
+    &.v1,
+    &.v2 {
+      padding-top: 85px;
+      .main-footer {
+        margin-top: 85px;
+      }
+    }
+    &.v1 {
+      .footer__widget {
+        .subscriber {
+          form {
+            padding: 10px 10px 10px 0px;
+            @include d-flex;
+            @include align-items;
+            @include justify-content-between;
+            border: 1px solid $color-green;
+            border-radius: 5px;
+            input {
+              width: 70%;
+              border: none;
+              border-radius: 0px;
+              & ~ button {
+                margin-top: 0;
+              }
+            }
+          }
+          & ~ .address-info {
+            margin-top: 65px;
+          }
+        }
+        .address-info > li {
+          width: calc(50% - 15px);
+        }
+      }
+    }
+    &.v2 {
+      .footer__widget {
+        margin-top: 0;
+      }
+      .logo-subscriber .footer-subscrib {
+        width: calc(100% - 330px);
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  /*=====================
+      4 Banner
+  =======================*/
+  .banner.v2 .profile-img .plan-p li {
+    width: 135px;
+    height: 135px;
+  }
+}
