@@ -696,6 +696,7 @@ Tags:
   =======================*/
   .menu-bar.v1 {
     background: var(--color-green);
+    display: none;
   }
   .menu-bar.v1 .menu-bar-content {
     display: -webkit-box;
