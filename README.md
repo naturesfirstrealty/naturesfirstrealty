@@ -1,5 +1,7 @@
-## Hi there 👋
-naturesfirstrealty.github.io/naturesfirstrealty
+## Hi there Welcome to Nature's First Realty Code Repo.👋
+Domain: https://naturesfirstrealty.com/
+
+Git: http://naturesfirstrealty.github.io/naturesfirstrealty/
 
 <!--
 **naturesfirstrealty/naturesfirstrealty** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

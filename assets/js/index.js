@@ -1,11 +1,11 @@
 /*
-Theme Name: Farmus - Agriculture and Organic Farm HTML5 Template
+Theme Name: Nature's First Realty
 Theme URI: https://themeforest.net/user/techsometimes/portfolio
 Design by: techsometimes
 Developed by: A N Abdullah Al Numan
 Version: 1.0
-License: 
-Tags: 
+License:
+Tags:
 */
 
 
@@ -60,7 +60,7 @@ Tags:
 
         10 My Select
 
-        11 HTML Fatch From 
+        11 HTML Fatch From
 
         12 Preloder Option
 
@@ -116,7 +116,7 @@ Tags:
       $(this).addClass("active");
       $(this).parents(".mobile-header").find(".mobile-menu-bar, .mobile-menu-overlay").addClass("active");
     });
-    
+
     $(".menu-bar.v1 .mobile-header .close-mobile-btn").on("click", function () {
       $(this).parents(".mobile-header").find(".mobile-menu-bar, .mobile-menu-btn, .mobile-menu-overlay").removeClass("active");
     });
@@ -129,7 +129,7 @@ Tags:
     $(".top-bar.v1 .search-open-btn").on("click", function () {
       $(this).parent().addClass("active");
     });
-    
+
     $(".menu-bar.v1 .mobile-header .search-open-btn").on("click", function () {
       $(this).parents("header").children(".top-bar.v1").find(".top-display-info").toggleClass("active");
     });
@@ -174,7 +174,7 @@ Tags:
         $topBar.add($menuBar).removeClass("sticky-header");
         $topBar.css({ "margin-top": "auto" });
       }
-      
+
     };
 
     $(window).on("scroll", handleScroll);
@@ -207,14 +207,14 @@ Tags:
       window.onload = function () {
         let Shuffle = window.Shuffle;
         let element = document.querySelector(".gallery-items");
-  
+
         let shuffleInstance = new Shuffle(element, {
           itemSelector: '.gallery-items > div'
-        }); 
+        });
         $(".projects-gallery .gallery-btns button").on('click',function(e){
           e.preventDefault();
           $(".projects-gallery .gallery-btns button").removeClass('active');
-          $(this).addClass('active'); 
+          $(this).addClass('active');
           let keyword = $(this).attr('data-target');
           shuffleInstance.filter(keyword);
         });
@@ -435,7 +435,7 @@ Tags:
   }
 
   /*=====================
-      11 HTML Fatch From 
+      11 HTML Fatch From
     =======================*/
   function htmlFatchFrom() {
     if ($("form").hasClass("message-form")) {
