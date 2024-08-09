@@ -1,11 +1,11 @@
 /*
-Theme Name: Farmus - Agriculture and Organic Farm HTML5 Template
+Theme Name: Nature's First Realty
 Theme URI: https://themeforest.net/user/techsometimes/portfolio
 Design by: techsometimes
 Developed by: A N Abdullah Al Numan
 Version: 1.0
-License: 
-Tags: 
+License:
+Tags:
 */
 /*================================================
 [  Table of contents  ]
@@ -13,9 +13,9 @@ Tags:
 
     1 Theme Default
 
-    2 Top Bar 
+    2 Top Bar
 
-    3 Menu Bar 
+    3 Menu Bar
 
     4 Banner
 
@@ -61,11 +61,11 @@ Tags:
 [ End table content ]
 ======================================*/
 /* =================
-    Google Fonts 
+    Google Fonts
 ===================*/
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Manrope:wght@400;500;600;700;800&display=swap");
 /* =================
-    Root Color 
+    Root Color
 =================*/
 :root {
   --color-white: #ffffff;
@@ -719,7 +719,7 @@ section.mb-spach {
 }
 
 /*=====================
-    2 Top Bar 
+    2 Top Bar
 =======================*/
 .top-bar.v1 {
   background: var(--color-white);
@@ -904,7 +904,7 @@ section.mb-spach {
 }
 
 /*=====================
-    3 Menu Bar 
+    3 Menu Bar
 =======================*/
 .menu-bar.v1 {
   background: var(--color-white2);

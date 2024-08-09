@@ -1,11 +1,11 @@
 /*
-Theme Name: Farmus - Agriculture and Organic Farm HTML5 Template
+Theme Name: Nature's First Realty
 Theme URI: https://themeforest.net/user/techsometimes/portfolio
 Design by: techsometimes
 Developed by: A N Abdullah Al Numan
 Version: 1.0
-License: 
-Tags: 
+License:
+Tags:
 */
 /*================================================
 [  Table of contents  ]
@@ -13,9 +13,9 @@ Tags:
 
     1 Theme Default
 
-    2 Top Bar 
+    2 Top Bar
 
-    3 Menu Bar 
+    3 Menu Bar
 
     4 Banner
 
@@ -58,7 +58,7 @@ Tags:
     1 Theme Default
 =======================*/
 /* =================
-    Root Color 
+    Root Color
 =================*/
 :root {
   --color-white: #ffffff;
@@ -75,7 +75,7 @@ Tags:
 
 @media (min-width: 370px) and (max-width: 576px) {
   /*=====================
-      2 Top Bar 
+      2 Top Bar
   =======================*/
   .top-bar.v1 .top-display-info li:nth-child(2) {
     display: -webkit-box;
@@ -88,7 +88,7 @@ Tags:
 }
 @media (min-width: 576px) {
   /*=====================
-      2 Top Bar 
+      2 Top Bar
   =======================*/
   .top-bar.v1 .top-display-info li:nth-child(2) {
     display: -webkit-box;
@@ -114,7 +114,7 @@ Tags:
     padding: 80px 0px;
   }
   /*=====================
-      2 Top Bar 
+      2 Top Bar
   =======================*/
   .top-bar.v1 .top-display-info li:nth-child(3) {
     display: -webkit-box;
@@ -631,7 +631,7 @@ Tags:
     margin-bottom: -100px;
   }
   /*=====================
-      2 Top Bar 
+      2 Top Bar
   =======================*/
   .top-bar.v1 {
     position: relative;
@@ -692,7 +692,7 @@ Tags:
     font-size: 24px;
   }
   /*=====================
-      3 Menu Bar 
+      3 Menu Bar
   =======================*/
   .menu-bar.v1 {
     background: var(--color-green);
