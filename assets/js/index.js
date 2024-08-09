@@ -76,34 +76,41 @@ Tags:
 
     let copyMenuLogo = $(".top-bar.v1 .top-bar-logo").html();
     let copyMenuList = $(".menu-bar.v1 .menu-bar-content").html();
-
     $(".menu-bar.v1 .menu-bar-content").parent().append(`
-        <div class="mobile-header">
-          <div class="mobile-menu-logo">
-            ${copyMenuLogo}
-          </div>
-          <div class="mobile-menu-right">
-            <button class="search-open-btn d-xl-none">
-              <span class="my-icon icon-magnifying-glass"></span>
-            </button>
-            <button class="mobile-menu-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div class="mobile-menu-bar">
-            <div class="mobile-menu-header">
-              <div class="mobile-logo">${copyMenuLogo}</div>
-              <button class="close-mobile-btn"><span class="my-icon icon-angle-left"></span></button>
-            </div>
-            <div class="mobile-main-manu">
-                ${copyMenuList}
-            </div>
-          </div>
-          <div class="mobile-menu-overlay"></div>
-        </div>
-      `);
+    <div class="mobile-header align-center">
+      <div class="mobile-menu-logo">
+        ${copyMenuLogo}
+      </div>
+
+    </div>
+  `);
+    // $(".menu-bar.v1 .menu-bar-content").parent().append(`
+    //     <div class="mobile-header">
+    //       <div class="mobile-menu-logo">
+    //         ${copyMenuLogo}
+    //       </div>
+    //       <div class="mobile-menu-right">
+    //         <button class="search-open-btn d-xl-none">
+    //           <span class="my-icon icon-magnifying-glass"></span>
+    //         </button>
+    //         <button class="mobile-menu-btn">
+    //           <span></span>
+    //           <span></span>
+    //           <span></span>
+    //         </button>
+    //       </div>
+    //       <div class="mobile-menu-bar">
+    //         <div class="mobile-menu-header">
+    //           <div class="mobile-logo">${copyMenuLogo}</div>
+    //           <button class="close-mobile-btn"><span class="my-icon icon-angle-left"></span></button>
+    //         </div>
+    //         <div class="mobile-main-manu">
+    //             ${copyMenuList}
+    //         </div>
+    //       </div>
+    //       <div class="mobile-menu-overlay"></div>
+    //     </div>
+    //   `);
 
     $(".menu-bar.v1 .mobile-menu-btn").on("click", function () {
       $(this).addClass("active");

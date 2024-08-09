@@ -907,7 +907,10 @@ section.mb-spach {
     3 Menu Bar
 =======================*/
 .menu-bar.v1 {
-  background: var(--color-white2);
+  background: var(--color-white);
+}
+.mobile-header{
+  justify-content: center !important;
 }
 .menu-bar.v1 .menu-bar-content {
   display: none;
