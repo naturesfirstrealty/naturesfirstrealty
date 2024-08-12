@@ -765,7 +765,7 @@
                                     <h2>write here below?</h2>
                                     <!-- <p>For your car we will do everything  advice, repairs and maintenance. We are the some preferred choice by many car owners because our experience and knowledge is selfe vident.For your car.</p> -->
                                 </div>
-                                <form action="https://formspree.io/f/xnnavzbp" method="POST" class="message-form v1">
+                                <form action="https://formspree.io/f/xnnavzbp" method="POST" class="message-form v1" id="form-1">
                                     <div class="group-box">
                                         <input type="text" name="name" placeholder="Your Name" required>
                                         <input type="email" name="email" placeholder="Your Email" required>
@@ -775,7 +775,7 @@
                                     </div>
                                     <textarea name="message" placeholder="Your Message"></textarea>
                                     <button type="submit" class="btn-anime v1 submit-btn">submit now</button>
-                                    <p class="response"></p>
+                                    <p id="status-1"></p>
                                 </form>
                             </div>
                         </div>
@@ -885,9 +885,10 @@
                                    <!-- IF YOU WANT TO UPDATE ?  -->
                                      STAY CONECTED!</h4>
                                 <div class="subscriber">
-                                    <form action="https://formspree.io/f/xnnavzbp" method="POST" class="sent-email">
-                                        <input type="email" placeholder="Your e-mail address">
+                                    <form action="https://formspree.io/f/mvgprvnn" method="POST" class="sent-email formspree" id="form-2">
+                                        <input type="email" name="email" placeholder="Your e-mail address">
                                         <button class="btn-anime v1" type="submit">SUBSCRIBE NOW</button>
+                                        <p id="status-2"></p>
                                     </form>
                                 </div>
                                 <ul class="address-info">
@@ -1015,5 +1016,41 @@
     <!-- Index -->
     <script src="assets/js/index.js"></script>
 </body>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        var form = event.target;
+        var status = form.querySelector('p[id^="status"]');
+        var data = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "You shall hear from us!";
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form";
+                    }
+                });
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+        });
+    }
+
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener("submit", handleSubmit);
+    });
+</script>
 
 </html>
