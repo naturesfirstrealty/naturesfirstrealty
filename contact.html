@@ -51,7 +51,7 @@
                         <div class="col-xl-8 p-xl-0">
                             <div class="top-bar-info">
                                 <div class="top-info d-none d-lg-flex">
-                                    <p>YOUR INVESTMENT DESTINATION!</p>
+                                    <p>YOUR FUTURE GROWTH HAVEN!</p>
                                     <!-- <ul>
                                         <li><a href="#">Careers</a></li>
                                         <li><a href="#">News & Media</a></li>
@@ -226,15 +226,15 @@
                         <h2>We Can take your <br> business to growth</h2>
                         <p>We are dedicated to answering all your questions about Managed Farmland, whether they pertain to agricultural practices or investment opportunities. Our goal is to ensure your satisfaction through exceptional customer service</p>
                     </div>
-                    <form action="assets/mail.php" method="POST" class="message-form v3">
+                    <form action="https://formspree.io/f/xnnavzbp" method="POST" class="message-form v1" id="my-form">
                         <div class="group-box">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
                             <input type="number" name="number" placeholder="Your Phone Number" required>
                         </div>
                         <textarea name="message" placeholder="Message"></textarea>
-                        <button type="submit" class="btn-anime v1 submit-btn">submit now</button>
-                        <p class="response"></p>
+                        <button id="my-form-button" type="submit" class="btn-anime v1 submit-btn">submit now</button>
+                        <p id="my-form-status"></p>
                     </form>
                 </div>
             </section>
@@ -381,5 +381,38 @@
     <!-- Index -->
     <script src="assets/js/index.js"></script>
 </body>
+
+<script>
+    var form = document.getElementById("my-form");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "You shall hear from us!";
+                form.reset()
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form"
+                    }
+                })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 </html>
