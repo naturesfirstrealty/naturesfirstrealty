@@ -1231,7 +1231,7 @@
         width: 80px;
         height: 80px;
         border-radius: 100px;
-        border: 5px solid $color-white;
+        //border: 5px solid $color-white;
         @include transform(translateX(-50%));
       }
       .star-mark {
