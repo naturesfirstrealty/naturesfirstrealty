@@ -168,11 +168,11 @@ Tags:
       const menuBarHeight = $menuBar.outerHeight();
 
       if ($this.scrollTop() > topBarHeight) {
-        $topBar.add($menuBar).addClass("sticky-header");
-        $topBar.css({ "margin-top": menuBarHeight });
+        //$topBar.add($menuBar).addClass("sticky-header");
+       // $topBar.css({ "margin-top": menuBarHeight });
       } else {
-        $topBar.add($menuBar).removeClass("sticky-header");
-        $topBar.css({ "margin-top": "auto" });
+       // $topBar.add($menuBar).removeClass("sticky-header");
+       // $topBar.css({ "margin-top": "auto" });
       }
 
     };
